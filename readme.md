@@ -1,0 +1,1 @@
+## Since the original document requires specific names for some HTML files, I'll keep those in folders for better readability.
