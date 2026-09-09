@@ -1,0 +1,47 @@
+  
+  
+body {
+    background-color: black;
+    color: white;
+}
+.wrapper {
+    border: 3px solid;
+    border-color: rgb(48, 72, 80);
+    padding: 3px;
+    border-radius: 5px;
+}
+.header {
+    border: 3px solid;
+    border-color: lightblue;
+    border-radius: 5px;
+}
+button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin: 3px;
+}
+button:hover {
+    background-color: rgb(65, 65, 65);
+    color: white;
+    border-radius: 5px;
+    margin: 3px;
+}
+a {
+    text-decoration: none;
+}
+table {
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 400px;
+}
+th, td {
+    border: 1px solid rgb(124, 124, 124);
+}
+.box {
+    justify-content: center;
+    border: 1px solid white;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 15px;
+}
