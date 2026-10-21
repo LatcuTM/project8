@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>countdown</h1>
+    <p id="txtOutput"></p>
+
+    <script>
+        function tellNed() {
+            txtOutput.textContent = teller + "...";
+            if (teller > 0) {
+                teller--;
+            }
+        }
+
+        let teller = 5;
+        setInterval (tellNed, 1000);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>calculator</h1>
+    <input id="inpNumA" type="number">
+    <input id="inpNumB" type="number">
+    <br>
+    <button onclick="pluss()">+</button>
+    <button onclick="minuss()">-</button>
+    <button onclick="multip()">*</button>
+    <button onclick="divi()">/</button>
+    <p id="txtOutput"></p>
+    
+    <script>
+        function pluss(){
+            let numA = Number(inpNumA.value);
+            let numB = Number(inpNumB.value);
+            let sum = numA + numB;
+            txtOutput.textContent = `${numA} + ${numB} = ${sum}`;
+        }
+        function minuss(){
+            let numA = Number(inpNumA.value);
+            let numB = Number(inpNumB.value);
+            let sum = numA - numB;
+            txtOutput.textContent = `${numA} - ${numB} = ${sum}`;
+        }
+        function multip(){
+            let numA = Number(inpNumA.value);
+            let numB = Number(inpNumB.value);
+            let sum = numA * numB;
+            txtOutput.textContent = `${numA} * ${numB} = ${sum}`;
+        }
+        function divi(){
+            let numA = Number(inpNumA.value);
+            let numB = Number(inpNumB.value);
+            if (numB === 0) {
+                txtOutput.textContent = "You cannot divide by 0."
+            } else {
+            let sum = numA / numB;
+            txtOutput.textContent = `${numA} / ${numB} = ${sum}`;
+            }
+        }
+    
+    </script>
+</body>
+</html>
