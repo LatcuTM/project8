@@ -12,6 +12,8 @@
     <script>
         function tellNed() {
             txtOutput.textContent = teller + "...";
+            // only count down if teller is bigger than 0
+            // avoids negatives
             if (teller > 0) {
                 teller--;
             }
