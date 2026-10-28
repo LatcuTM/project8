@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alderskalkulator</title>
+</head>
+  <script>
+    function regnUt() {
+        let alder = Number(inpAlder.value);
+
+        if (alder == 0) {
+            txtUt.textContent = "Du må skrive inn alderen din først!";
+        } else {
+            let dager = alder * 365;
+            let timer = dager * 24;
+            txtUt.textContent = `Du er ca. ${dager} dager gammel. Det er ${timer} timer!`;
+      }
+    }
+  </script>
+<body>
+    <h1>Alderskalkulator</h1>
+    <p>Hvor gammel er du?</p>
+    <input type="number" id="inpAlder">
+    <button onclick="regnUt()">Regn ut</button>
+    <p id="txtUt"></p>
+
+</body>
+</html>
