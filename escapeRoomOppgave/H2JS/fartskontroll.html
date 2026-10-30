@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fartskontrollen</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f4f8;
+    }
+    input {
+        font-size: 20px;
+        padding: 10px;
+        width: 100px;
+        text-align: center;
+        border: 2px solid #1f3a5c;
+        border-radius: 10px;
+    }
+    button {
+        font-size: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        background-color: #1f3a5c;
+        color: white;
+    }
+    button:hover {
+        background-color: #3d6a9e;
+    }
+    #txtSvar {
+        font-size: 24px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<h1>Fartskontrollen</h1>
+<p>Fartsgrensen her er 80 km/t. Hvor fort kjørte bilen?</p>
+
+<input type="number" id="inpFart">
+<button onclick="sjekk()">Sjekk</button>
+<p id="txtSvar"></p>
+
+
+
+<script>
+    let fartsgrense = 80;
+
+    function sjekk() {
+        let fart = Number(inpFart.value);
+        
+        if (fart > fartsgrense || fart < -fartsgrense) {
+            txtSvar.textContent = "For fort!";
+        } else {
+            txtSvar.textContent = "Farten er grei.";
+        }
+    }
+</script>
+</body>
+</html>
