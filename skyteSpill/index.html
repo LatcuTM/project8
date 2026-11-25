@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini skytespill</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Mini skytespill</h1>
+        <p id="txtPoeng" aria-live="polite">Poeng: 0</p>
+        <div id="gameBoard" aria-label="Spillebrett">
+            <button id="enemy" type="button" aria-label="Treff fienden"></button>
+        </div>
+    </main>
+
+    <div id="flash" aria-hidden="true"></div>
+
+    <script>
+        const enemy = document.querySelector('#enemy');
+        const txtPoeng = document.querySelector('#txtPoeng');
+        const flash = document.querySelector('#flash');
+
+        let brettBredde = 500;
+        let brettHoyde = 400;
+        let fiendeStorrelse = 30;
+        let x = 0;
+        let y = 0;
+        let fart = 2;
+        let poeng = 0;
+
+        function treff() {
+            if (enemy.classList.contains('killed')) return;
+
+            poeng++;
+            txtPoeng.textContent = `Poeng: ${poeng}`;
+            enemy.classList.add('killed');
+            flash.classList.remove('active');
+            void flash.offsetWidth;
+            flash.classList.add('active');
+            setTimeout(nyFiende, 140);
+        }
+
+        function nyFiende() {
+            x = -fiendeStorrelse;
+            y = Math.floor(Math.random() * (brettHoyde - fiendeStorrelse));
+            enemy.classList.remove('killed');
+            tegnFiende();
+        }
+
+        function tegnFiende() {
+            enemy.style.left = `${x}px`;
+            enemy.style.top = `${y}px`;
+        }
+
+        function flytt() {
+            if (!enemy.classList.contains('killed')) {
+                x += fart;
+                if (x > brettBredde) nyFiende();
+                tegnFiende();
+            }
+        }
+
+        enemy.addEventListener('click', treff);
+
+        nyFiende();
+        setInterval(flytt, 20);
+    </script>
+</body>
+</html>
